@@ -3,12 +3,12 @@ package springjwt.payload.response;
 import java.util.List;
 
 public class JwtResponse {
-    private String token;
-    private String type = "Bearer";
-    private Long id;
+    private final String token;
+    private static final String TYPE = "Bearer";
+    private final Long id;
     private String username;
-    private String email;
-    private List<String> roles;
+    private final String email;
+    private final List<String> roles;
 
     public JwtResponse(String accessToken, Long id, String username, String email, List<String> roles) {
         this.token = accessToken;
@@ -22,32 +22,16 @@ public class JwtResponse {
         return token;
     }
 
-    public void setAccessToken(String accessToken) {
-        this.token = accessToken;
-    }
-
     public String getTokenType() {
-        return type;
-    }
-
-    public void setTokenType(String tokenType) {
-        this.type = tokenType;
+        return TYPE;
     }
 
     public Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getEmail() {
         return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public String getUsername() {
